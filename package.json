@@ -4,6 +4,9 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:service": "turbo dev --filter=service",
+    "build:service": "turbo build --filter=service",
+    "start:service": "turbo start --filter=service",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
@@ -11,7 +14,8 @@
   "devDependencies": {
     "prettier": "^3.5.3",
     "turbo": "^2.5.1",
-    "typescript": "5.8.2"
+    "typescript": "5.8.2",
+    "prettier-plugin-organize-imports": "^4.1.0"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {
