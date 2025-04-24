@@ -1,5 +1,5 @@
 {
-  "name": "oauth2-test-app-with-turborepo",
+  "name": "test-app-with-turborepo",
   "private": true,
   "scripts": {
     "build": "turbo run build",
