@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./components/*": "./src/components/*/index.tsx"
+    "./components/*": "./src/components/*/index.tsx",
+    "./styles.css": "./src/styles.css"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -12,7 +13,8 @@
   },
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwind-variants": "^1.0.0"
   },
   "devDependencies": {
     "@repo/config-eslint": "workspace:*",
@@ -22,6 +24,7 @@
     "@types/node": "^22.14.0",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
+    "daisyui": "^5.0.28",
     "eslint": "^9.25.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.4",

@@ -1,7 +1,13 @@
-export function Button() {
-  return (
-    <button className="border border-blue-500 text-3xl font-bold text-red-600">
-      버튼
-    </button>
-  )
+import { button, ButtonVariants } from './variants'
+
+type MakeRequired<T, K extends keyof T> = Omit<T, K> & Required<Pick<T, K>>
+
+interface ButtonProps
+  extends MakeRequired<ButtonVariants, 'color' | 'variant'> {
+  children: React.ReactNode
+}
+
+export function Button(props: ButtonProps) {
+  const className = button(props)
+  return <button className={className}>{props.children}</button>
 }

@@ -6,7 +6,9 @@ export default function Home() {
       <div className="border border-green-500 bg-red-200 text-2xl font-bold">
         Home
       </div>
-      <Button />
+      <Button color="accent" variant="dash">
+        버튼
+      </Button>
     </>
   )
 }
