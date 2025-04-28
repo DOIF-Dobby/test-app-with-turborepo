@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@import '@repo/ui/styles.css';
+@import '../styles/rehype-pretty.css';
+
+@plugin '@tailwindcss/typography';
+
+@source '../../../../packages/ui/src';
