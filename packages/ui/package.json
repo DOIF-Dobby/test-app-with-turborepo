@@ -4,7 +4,7 @@
   "private": true,
   "exports": {
     "./components/*": "./src/components/*/index.tsx",
-    "./styles.css": "./src/styles.css"
+    "./styles.css": "./src/styles/globals.css"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
