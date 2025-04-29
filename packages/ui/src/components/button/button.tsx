@@ -1,13 +1,32 @@
+import { Slot } from 'radix-ui'
+import { AsChild } from '../../types/inedex'
+import { cn } from '../../utils/cn'
 import { button, ButtonVariants } from './variants'
 
-type MakeRequired<T, K extends keyof T> = Omit<T, K> & Required<Pick<T, K>>
+type Props = Omit<React.ComponentProps<'button'>, keyof ButtonVariants> &
+  ButtonVariants &
+  AsChild
 
-interface ButtonProps
-  extends MakeRequired<ButtonVariants, 'color' | 'variant'> {
-  children: React.ReactNode
-}
+export interface ButtonProps extends Props {}
 
 export function Button(props: ButtonProps) {
-  const className = button(props)
-  return <button className={className}>{props.children}</button>
+  const {
+    asChild = false,
+    color,
+    variant,
+    size,
+    className,
+    ...buttonProps
+  } = props
+
+  const styles = button({
+    color,
+    variant,
+    className,
+    size,
+  })
+
+  const Comp = asChild ? Slot.Root : 'button'
+
+  return <Comp data-slot="button" className={cn(styles)} {...buttonProps} />
 }
