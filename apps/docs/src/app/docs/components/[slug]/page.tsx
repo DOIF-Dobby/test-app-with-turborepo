@@ -4,9 +4,13 @@ type Params = {
 
 export default async function Page({ params }: Params) {
   const { slug } = await params
-  const { default: Post } = await import(`@/content/${slug}.mdx`)
+  const mod = await import(`@/content/${slug}.mdx`)
+  const MDXPage = mod.default
+  const meta = mod.frontMatter
 
-  return <Post />
+  console.log(meta)
+
+  return <MDXPage />
 }
 
 export const dynamicParams = false

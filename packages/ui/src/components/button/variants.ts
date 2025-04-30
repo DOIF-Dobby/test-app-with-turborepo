@@ -5,7 +5,7 @@ export const button = tv({
   variants: {
     color: {
       neutral: 'btn-neutral',
-      primary: 'btn-primary ㅠㅅ',
+      primary: 'btn-primary',
       secondary: 'btn-secondary',
       accent: 'btn-accent',
       info: 'btn-info',
