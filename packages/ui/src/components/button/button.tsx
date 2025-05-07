@@ -1,7 +1,7 @@
 import { Slot } from 'radix-ui'
-import { AsChild } from '../../types/inedex'
+import { AsChild } from '../../types/util'
 import { cn } from '../../utils/cn'
-import { button, ButtonVariants } from './variants'
+import { ButtonVariants, buttonVariatns } from './variants'
 
 type Props = Omit<React.ComponentProps<'button'>, keyof ButtonVariants> &
   ButtonVariants &
@@ -16,17 +16,17 @@ export function Button(props: ButtonProps) {
     variant,
     size,
     className,
-    ...buttonProps
+    ...otherProps
   } = props
 
-  const styles = button({
+  const styles = buttonVariatns({
     color,
     variant,
-    className,
     size,
+    className,
   })
 
   const Comp = asChild ? Slot.Root : 'button'
 
-  return <Comp data-slot="button" className={cn(styles)} {...buttonProps} />
+  return <Comp data-slot="button" className={cn(styles)} {...otherProps} />
 }

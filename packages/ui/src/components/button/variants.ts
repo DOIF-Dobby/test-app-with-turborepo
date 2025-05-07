@@ -1,6 +1,6 @@
 import { tv, type VariantProps } from 'tailwind-variants'
 
-export const button = tv({
+export const buttonVariatns = tv({
   base: 'btn',
   variants: {
     color: {
@@ -30,4 +30,4 @@ export const button = tv({
   },
 })
 
-export type ButtonVariants = VariantProps<typeof button>
+export type ButtonVariants = VariantProps<typeof buttonVariatns>
