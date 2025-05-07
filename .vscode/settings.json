@@ -3,5 +3,11 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "tailwindCSS.classAttributes": ["className", "classNames"],
+  "tailwindCSS.classFunctions": ["tv"],
+  "tailwindCSS.experimental.configFile": {
+    "packages/ui/src/styles/globals.css": "packages/ui/src/**",
+    "apps/docs/src/app/app.css": "apps/docs/src/**"
+  }
 }
