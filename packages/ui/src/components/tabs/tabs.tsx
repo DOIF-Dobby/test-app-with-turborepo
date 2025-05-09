@@ -1,6 +1,9 @@
+'use client'
+
 import { Tabs as TabsPrimitive } from 'radix-ui'
 import { SlotsToClasses } from '../../types/util'
 import { cn } from '../../utils/cn'
+import { TabsContext } from './tabs-context'
 import { TabsSlots, TabsVariants, tabsVariatns } from './variants'
 
 type Props = Omit<TabsPrimitive.TabsProps, keyof TabsVariants> & TabsVariants
@@ -10,9 +13,7 @@ export interface TabsProps extends Props {
 }
 
 export function Tabs(props: TabsProps) {
-  const { className, classNames, ...otherProps } = props
-
-  console.log(classNames)
+  const { children, className, classNames, ...otherProps } = props
 
   const slots = tabsVariatns()
 
@@ -20,5 +21,15 @@ export function Tabs(props: TabsProps) {
     className: cn(classNames?.tabsRoot, className),
   })
 
-  return <TabsPrimitive.Root className={cn(styles)} {...otherProps} />
+  return (
+    <TabsPrimitive.Root className={cn(styles)} {...otherProps}>
+      <TabsContext
+        value={{
+          classNames,
+        }}
+      >
+        {children}
+      </TabsContext>
+    </TabsPrimitive.Root>
+  )
 }

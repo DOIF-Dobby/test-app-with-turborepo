@@ -5,7 +5,7 @@ export const tabsVariatns = tv({
     tabsRoot: '',
     tabList: 'tabs',
     tabTrigger: 'tab',
-    tabContent: '',
+    tabContent: 'tab-content',
   },
 })
 
