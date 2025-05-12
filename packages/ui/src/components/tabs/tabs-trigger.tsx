@@ -3,10 +3,9 @@
 import { Tabs as TabsPrimitive } from 'radix-ui'
 import { cn } from '../../utils/cn'
 import { useTabsContext } from './tabs-context'
-import { TabsVariants, tabsVariatns } from './variants'
+import { tabsVariatns } from './variants'
 
-type Props = Omit<TabsPrimitive.TabsTriggerProps, keyof TabsVariants> &
-  TabsVariants
+type Props = TabsPrimitive.TabsTriggerProps
 
 export interface TabsTriggerProps extends Props {}
 

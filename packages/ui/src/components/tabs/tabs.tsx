@@ -13,7 +13,7 @@ export interface TabsProps extends Props {
 }
 
 export function Tabs(props: TabsProps) {
-  const { children, className, classNames, ...otherProps } = props
+  const { children, className, classNames, size, ...otherProps } = props
 
   const slots = tabsVariatns()
 
@@ -26,6 +26,7 @@ export function Tabs(props: TabsProps) {
       <TabsContext
         value={{
           classNames,
+          size,
         }}
       >
         {children}

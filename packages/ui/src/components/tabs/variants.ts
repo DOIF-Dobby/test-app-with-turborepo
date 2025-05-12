@@ -5,7 +5,26 @@ export const tabsVariatns = tv({
     tabsRoot: '',
     tabList: 'tabs',
     tabTrigger: 'tab',
-    tabContent: 'tab-content',
+    tabContent: '',
+  },
+  variants: {
+    size: {
+      xs: {
+        tabList: 'tabs-xs',
+      },
+      sm: {
+        tabList: 'tabs-sm',
+      },
+      md: {
+        tabList: 'tabs-md',
+      },
+      lg: {
+        tabList: 'tabs-lg',
+      },
+      xl: {
+        tabList: 'tabs-xl',
+      },
+    },
   },
 })
 

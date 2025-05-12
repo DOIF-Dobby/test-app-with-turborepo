@@ -3,10 +3,9 @@
 import { Tabs as TabsPrimitive } from 'radix-ui'
 import { cn } from '../../utils/cn'
 import { useTabsContext } from './tabs-context'
-import { TabsVariants, tabsVariatns } from './variants'
+import { tabsVariatns } from './variants'
 
-type Props = Omit<TabsPrimitive.TabsContentProps, keyof TabsVariants> &
-  TabsVariants
+type Props = TabsPrimitive.TabsContentProps
 
 export interface TabsContentProps extends Props {}
 
@@ -19,6 +18,8 @@ export function TabsContent(props: TabsContentProps) {
   const styles = slots.tabContent({
     className: cn(context.classNames?.tabContent, className),
   })
+
+  console.log(`탭 Content ${props.value}`)
 
   return <TabsPrimitive.TabsContent className={cn(styles)} {...otherProps} />
 }
