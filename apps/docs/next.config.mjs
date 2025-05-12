@@ -11,6 +11,16 @@ const nextConfig = {
   /* config options here */
   reactStrictMode: false,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.tsx?$/,
+      // import 시 `?raw` 쿼리가 들어간 경우에만 raw-loader 적용
+      resourceQuery: /raw/,
+      use: 'raw-loader',
+    })
+
+    return config
+  },
 }
 
 /** @type {import('rehype-pretty-code').Options} */
@@ -47,12 +57,5 @@ const withMDX = createMDX({
 })
 
 const config = withMDX(nextConfig)
-
-// config.turbopack = {
-//   ...config.experimental?.turbo,
-// }
-
-// delete config.experimental
-// delete config.webpack
 
 export default config

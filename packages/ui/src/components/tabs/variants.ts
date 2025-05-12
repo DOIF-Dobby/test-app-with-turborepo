@@ -25,6 +25,17 @@ export const tabsVariatns = tv({
         tabList: 'tabs-xl',
       },
     },
+    variant: {
+      box: {
+        tabList: 'tabs-box',
+      },
+      border: {
+        tabList: 'tabs-border',
+      },
+      lift: {
+        tabList: 'tabs-lift',
+      },
+    },
   },
 })
 

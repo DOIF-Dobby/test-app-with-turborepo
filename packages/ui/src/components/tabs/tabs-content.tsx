@@ -19,7 +19,5 @@ export function TabsContent(props: TabsContentProps) {
     className: cn(context.classNames?.tabContent, className),
   })
 
-  console.log(`탭 Content ${props.value}`)
-
   return <TabsPrimitive.TabsContent className={cn(styles)} {...otherProps} />
 }

@@ -18,6 +18,7 @@ export function TabsList(props: TabsListProps) {
   const styles = slots.tabList({
     className: cn(context.classNames?.tabList, className),
     size: context.size,
+    variant: context.variant,
   })
 
   return <TabsPrimitive.TabsList className={cn(styles)} {...otherProps} />

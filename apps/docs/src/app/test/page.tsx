@@ -1,21 +1,15 @@
 'use client'
 
-import { Button } from '@repo/ui/components/button'
 import {
   Tabs,
   TabsContent,
   TabsList,
-  TabsProps,
   TabsTrigger,
 } from '@repo/ui/components/tabs'
-import { useState } from 'react'
 
 export default function Page() {
-  const [size, setSize] = useState<TabsProps['size']>('md')
-
   return (
     <>
-      <Button onClick={() => setSize('xl')}>버튼</Button>
       <Tabs
         defaultValue="2"
         classNames={
@@ -27,7 +21,7 @@ export default function Page() {
             // tabList: 'bg-gray-800',
           }
         }
-        size={size}
+        variant="lift"
       >
         <TabsList>
           <TabsTrigger value="1">Tab 1</TabsTrigger>
