@@ -4,13 +4,33 @@ description: 'Button'
 date: '2024-05-12'
 ---
 
-import { CodeBlock } from '@/components/code-block'
+import { CodeBlock } from '@/components/code-block/code-block'
 
 import Default from './default'
 import DefaultRaw from './default?raw'
+import Sizes from './sizes'
+import SizesRaw from './sizes?raw'
+import Colors from './colors'
+import ColorsRaw from './colors?raw'
+import VariantsSoft from './variants/soft'
+import VariantsSoftRaw from './variants/soft?raw'
 
 # Button
 
 ### Default
 
 <CodeBlock preview={<Default />} code={DefaultRaw} />
+
+### Sizes
+
+<CodeBlock preview={<Sizes />} code={SizesRaw} />
+
+### Colors
+
+<CodeBlock preview={<Colors />} code={ColorsRaw} />
+
+### Variants
+
+#### Soft
+
+<CodeBlock preview={<VariantsSoft />} code={VariantsSoftRaw} />
