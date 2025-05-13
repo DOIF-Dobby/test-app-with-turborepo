@@ -23,11 +23,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko" data-theme="switchui" className="light">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="text-base-content bg-base-100 mx-auto max-w-[100rem]">
+        <div className="text-base-content bg-background mx-auto max-w-[100rem]">
           {children}
         </div>
       </body>

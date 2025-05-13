@@ -20,7 +20,7 @@ export function CodeBlock({ preview, code }: Props) {
         <TabsTrigger value="code">Code</TabsTrigger>
       </TabsList>
       <TabsContent value="preview" className="p-2">
-        <div className="border-base-300 overflow-x-auto rounded-lg border px-2 py-4">
+        <div className="border-base-200 overflow-x-auto rounded-lg border px-2 py-4">
           {preview}
         </div>
       </TabsContent>

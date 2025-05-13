@@ -10,19 +10,7 @@ import {
 export default function Page() {
   return (
     <>
-      <Tabs
-        defaultValue="2"
-        classNames={
-          {
-            // tabsRoot: 'bg-blue-200',
-            // tabContent: 'bg-red-200',
-            // tabTrigger:
-            // 'text-red-500 data-[state=inactive]:text-blue-500 data-[state=inactive]:bg-black',
-            // tabList: 'bg-gray-800',
-          }
-        }
-        variant="lift"
-      >
+      <Tabs defaultValue="2" variant="lift">
         <TabsList>
           <TabsTrigger value="1">Tab 1</TabsTrigger>
           <TabsTrigger value="2">Tab 2</TabsTrigger>

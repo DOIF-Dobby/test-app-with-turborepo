@@ -5,6 +5,7 @@ import rehypeSlug from 'rehype-slug'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
+import remarkExtractHeadings from './remark-extract-headings.mjs'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -31,6 +32,7 @@ const options = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [
+      remarkExtractHeadings,
       remarkGfm,
       remarkFrontmatter,
       [
@@ -49,7 +51,7 @@ const withMDX = createMDX({
           behavior: 'prepend', // prepend | append
           properties: { className: ['markdown-anchor'] },
           content: { type: 'text', value: '#' },
-          test: ['h3', 'h4', 'h5'], // h3, h4, h5에만 적용
+          test: ['h2', 'h3', 'h4', 'h5'],
         },
       ],
     ],

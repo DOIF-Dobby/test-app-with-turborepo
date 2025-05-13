@@ -1,2 +1,89 @@
 @import 'tailwindcss';
 @plugin 'daisyui';
+
+:root,
+.light {
+  --sone-background: oklch(1 0 0);
+
+  --sone-gray-0: oklch(0.98 0.0017 247.84);
+  --sone-gray-100: oklch(0.96 0.0029 264.54);
+  --sone-gray-200: oklch(0.94 0.0046 258.33);
+  --sone-gray-300: oklch(0.87 0.0095 242.85);
+  --sone-gray-400: oklch(0.83 0.009 264.52);
+  --sone-gray-500: oklch(0.77 0.0134 244.31);
+  --sone-gray-600: oklch(0.54 0.0244 252.64);
+  --sone-gray-700: oklch(0.38 0.03 248.62);
+  --sone-gray-800: oklch(0.31 0.0226 248.56);
+  --sone-gray-900: oklch(0.23 0.0171 248.59);
+
+  --sone-cta1-default: oklch(0.26 0.0343 264.71);
+  --sone-cta1-hover: oklch(0.37 0.0239 248.47);
+  --sone-cta1-pressed: oklch(0.37 0.0239 248.47);
+  --sone-cta1-disabled: oklch(0.89 0.014 247.98);
+  --sone-cta1-secondary-hover: oklch(0.98 0.0029 264.54);
+  --sone-cta1-secondary-pressed: oklch(0.98 0.0029 264.54);
+}
+
+.dark {
+  --sone-background: oklch(0.23 0.0171 248.59);
+
+  --sone-gray-0: oklch(0 0 0);
+  --sone-gray-100: oklch(0.31 0.0226 248.56);
+  --sone-gray-200: oklch(0.38 0.03 248.62);
+  --sone-gray-300: oklch(0.54 0.0244 252.64);
+  --sone-gray-400: oklch(0.59 0.0219 252.98);
+  --sone-gray-500: oklch(0.64 0.0164 251.23);
+  --sone-gray-600: oklch(0.85 0.0071 247.91);
+  --sone-gray-700: oklch(0.91 0.006 239.83);
+  --sone-gray-800: oklch(0.96 0.0025 228.78);
+  --sone-gray-900: oklch(0.98 0.0017 247.84);
+
+  --sone-cta1-default: oklch(0.75 0.1663 62.59);
+  --sone-cta1-hover: oklch(0.81 0.1458 65.87);
+  --sone-cta1-pressed: oklch(0.81 0.1458 65.87);
+  --sone-cta1-disabled: oklch(0.38 0.0197 73.33);
+  --sone-cta1-secondary-hover: oklch(0.34 0.0366 74.53);
+  --sone-cta1-secondary-pressed: oklch(0.34 0.0366 74.53);
+}
+
+@theme {
+  --color-background: var(--sone-background);
+  --color-base-0: var(--sone-gray-0);
+  --color-base-100: var(--sone-gray-100);
+  --color-base-200: var(--sone-gray-200);
+  --color-base-300: var(--sone-gray-300);
+  --color-base-400: var(--sone-gray-400);
+  --color-base-500: var(--sone-gray-500);
+  --color-base-600: var(--sone-gray-600);
+  --color-base-700: var(--sone-gray-700);
+  --color-base-800: var(--sone-gray-800);
+  --color-base-900: var(--sone-gray-900);
+
+  --color-base-content: var(--sone-cta1-default);
+}
+
+@plugin 'daisyui/theme' {
+  name: 'switchui';
+  default: true;
+
+  --color-base-100: var(--sone-gray-100);
+  --color-base-200: var(--sone-gray-200);
+  --color-base-300: var(--sone-gray-300);
+  --color-base-content: var(--sone-cta1-default);
+  --color-primary: oklch(55% 0.3 240);
+  --color-primary-content: oklch(98% 0.01 240);
+  --color-secondary: oklch(70% 0.25 200);
+  --color-secondary-content: oklch(98% 0.01 200);
+  --color-accent: oklch(65% 0.25 160);
+  --color-accent-content: oklch(98% 0.01 160);
+  --color-neutral: oklch(50% 0.05 240);
+  --color-neutral-content: oklch(98% 0.01 240);
+  --color-info: oklch(70% 0.2 220);
+  --color-info-content: oklch(98% 0.01 220);
+  --color-success: oklch(65% 0.25 140);
+  --color-success-content: oklch(98% 0.01 140);
+  --color-warning: oklch(80% 0.25 80);
+  --color-warning-content: oklch(20% 0.05 80);
+  --color-error: oklch(65% 0.3 30);
+  --color-error-content: oklch(98% 0.01 30);
+}
