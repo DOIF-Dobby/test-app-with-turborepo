@@ -1,14 +1,3 @@
-import { Button } from '@repo/ui/components/button'
-
 export default function Home() {
-  return (
-    <>
-      <Button color="accent" variant="dash">
-        버튼
-      </Button>
-      <Button color="neutral" variant="soft">
-        버튼2
-      </Button>
-    </>
-  )
+  return <>Home</>
 }
