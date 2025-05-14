@@ -5,7 +5,7 @@ import {
   TabsTrigger,
 } from '@repo/ui/components/tabs'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { tomorrow as style } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { oneDark as style } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 interface Props {
   preview: React.ReactElement
