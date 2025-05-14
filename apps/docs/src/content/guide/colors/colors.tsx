@@ -22,7 +22,7 @@ function ColorBox({ children, className }: ColorBoxProps) {
 export function Cta1() {
   return (
     <div className="flex flex-wrap gap-4">
-      <ColorBox className="bg-cta1-default">Default</ColorBox>
+      <ColorBox className="bg-cta1">Default</ColorBox>
       <ColorBox className="bg-cta1-hover">Hover</ColorBox>
       <ColorBox className="bg-cta1-pressed">Pressed</ColorBox>
       <ColorBox className="bg-cta1-disabled">Disabled</ColorBox>
@@ -37,7 +37,7 @@ export function Cta1() {
 export function Cta2() {
   return (
     <div className="flex flex-wrap gap-4">
-      <ColorBox className="bg-cta2-default">Default</ColorBox>
+      <ColorBox className="bg-cta2">Default</ColorBox>
       <ColorBox className="bg-cta2-hover">Hover</ColorBox>
       <ColorBox className="bg-cta2-pressed">Pressed</ColorBox>
       <ColorBox className="bg-cta2-disabled">Disabled</ColorBox>
@@ -52,7 +52,7 @@ export function Cta2() {
 export function Desctructive() {
   return (
     <div className="flex flex-wrap gap-4">
-      <ColorBox className="bg-destructive-default">Default</ColorBox>
+      <ColorBox className="bg-destructive">Default</ColorBox>
       <ColorBox className="bg-destructive-hover">Hover</ColorBox>
       <ColorBox className="bg-destructive-pressed">Pressed</ColorBox>
       <ColorBox className="bg-destructive-disabled">Disabled</ColorBox>

@@ -1,1 +1,1 @@
-export { cn } from './cn'
+export { cn, twMerge } from './cn'

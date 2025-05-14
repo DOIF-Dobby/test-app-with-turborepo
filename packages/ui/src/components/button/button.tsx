@@ -16,6 +16,7 @@ export function Button(props: ButtonProps) {
     variant,
     size,
     className,
+    isDisabled,
     ...otherProps
   } = props
 
@@ -23,10 +24,18 @@ export function Button(props: ButtonProps) {
     color,
     variant,
     size,
+    isDisabled,
     className,
   })
 
   const Comp = asChild ? Slot.Root : 'button'
 
-  return <Comp data-slot="button" className={cn(styles)} {...otherProps} />
+  return (
+    <Comp
+      data-slot="button"
+      disabled={isDisabled}
+      className={cn(styles)}
+      {...otherProps}
+    />
+  )
 }
