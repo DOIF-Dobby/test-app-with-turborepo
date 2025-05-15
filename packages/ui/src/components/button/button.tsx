@@ -7,16 +7,20 @@ type Props = Omit<React.ComponentProps<'button'>, keyof ButtonVariants> &
   ButtonVariants &
   AsChild
 
-export interface ButtonProps extends Props {}
+export interface ButtonProps extends Props {
+  fullWidth?: boolean
+}
 
 export function Button(props: ButtonProps) {
   const {
+    ref,
     asChild = false,
     color,
     variant,
     size,
     className,
     isDisabled,
+    fullWidth,
     ...otherProps
   } = props
 
@@ -25,6 +29,7 @@ export function Button(props: ButtonProps) {
     variant,
     size,
     isDisabled,
+    fullWidth,
     className,
   })
 
@@ -33,6 +38,7 @@ export function Button(props: ButtonProps) {
   return (
     <Comp
       data-slot="button"
+      ref={ref}
       disabled={isDisabled}
       className={cn(styles)}
       {...otherProps}

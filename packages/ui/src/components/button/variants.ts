@@ -10,6 +10,7 @@ export const buttonVariatns = tv(
       'px-sone-md',
       'font-semibold',
       'cursor-pointer',
+      'transform-gpu duration-200 active:scale-97',
     ],
     variants: {
       color: {
@@ -28,6 +29,9 @@ export const buttonVariatns = tv(
       isDisabled: {
         true: 'pointer-events-none',
       },
+      fullWidth: {
+        true: 'w-full',
+      },
     },
     defaultVariants: {
       color: 'cta1',
@@ -38,7 +42,7 @@ export const buttonVariatns = tv(
       {
         color: 'cta1',
         isDisabled: false,
-        class: 'bg-cta1',
+        class: 'bg-cta1 hover:bg-cta1-hover',
       },
       {
         color: 'cta1',
@@ -48,7 +52,7 @@ export const buttonVariatns = tv(
       {
         color: 'cta2',
         isDisabled: false,
-        class: 'bg-cta2',
+        class: 'bg-cta2 hover:bg-cta2-hover',
       },
       {
         color: 'cta2',
@@ -58,7 +62,7 @@ export const buttonVariatns = tv(
       {
         color: 'destructive',
         isDisabled: false,
-        class: 'bg-destructive',
+        class: 'bg-destructive hover:bg-destructive-hover',
       },
       {
         color: 'destructive',
