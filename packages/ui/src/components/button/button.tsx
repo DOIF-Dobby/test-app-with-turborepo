@@ -1,6 +1,12 @@
+'use client'
+
+import { useRipple } from '@repo/hooks/use-ripple'
+import { mergeRefs } from '@repo/utils/merge-refs'
 import { Slot } from 'radix-ui'
+import { useRef } from 'react'
 import { AsChild } from '../../types/util'
 import { cn } from '../../utils/cn'
+import { Ripple } from '../ripple'
 import { ButtonVariants, buttonVariatns } from './variants'
 
 type Props = Omit<React.ComponentProps<'button'>, keyof ButtonVariants> &
@@ -15,6 +21,7 @@ export function Button(props: ButtonProps) {
   const {
     ref,
     asChild = false,
+    children,
     color,
     variant,
     size,
@@ -23,6 +30,10 @@ export function Button(props: ButtonProps) {
     fullWidth,
     ...otherProps
   } = props
+
+  const innerRef = useRef<HTMLButtonElement>(null)
+
+  const { ripples, onClear } = useRipple(innerRef)
 
   const styles = buttonVariatns({
     color,
@@ -38,10 +49,13 @@ export function Button(props: ButtonProps) {
   return (
     <Comp
       data-slot="button"
-      ref={ref}
+      ref={mergeRefs([innerRef, ref])}
       disabled={isDisabled}
       className={cn(styles)}
       {...otherProps}
-    />
+    >
+      {children}
+      <Ripple ripples={ripples} onClear={onClear} />
+    </Comp>
   )
 }

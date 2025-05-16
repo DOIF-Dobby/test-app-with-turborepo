@@ -3,6 +3,7 @@ import { tv, type VariantProps } from 'tailwind-variants'
 export const buttonVariatns = tv(
   {
     base: [
+      'relative',
       'inline-flex',
       'items-center',
       'justify-center',
@@ -10,6 +11,7 @@ export const buttonVariatns = tv(
       'px-sone-md',
       'font-semibold',
       'cursor-pointer',
+      'overflow-hidden',
       'transform-gpu duration-200 active:scale-97',
     ],
     variants: {
