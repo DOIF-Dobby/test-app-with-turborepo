@@ -26,7 +26,7 @@ export default function Page() {
       </Tabs>
       <Button
         ref={ref}
-        onClick={() => {
+        onPress={() => {
           console.log('테스트')
         }}
       >

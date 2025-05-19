@@ -13,6 +13,8 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@react-aria/interactions": "^3.25.0",
+    "@react-aria/utils": "^3.28.2",
     "@repo/hooks": "workspace:*",
     "@repo/utils": "workspace:*",
     "clsx": "^2.1.1",

@@ -1,4 +1,3 @@
-import { RippleType } from '@repo/hooks/use-ripple'
 import { clamp } from '@repo/utils/number'
 import {
   AnimatePresence,
@@ -7,6 +6,7 @@ import {
   LazyMotion,
   m,
 } from 'motion/react'
+import { RippleType } from './use-ripple'
 
 export interface RippleProps {
   ripples: RippleType[]

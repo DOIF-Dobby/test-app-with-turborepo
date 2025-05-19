@@ -12,7 +12,6 @@ export const buttonVariatns = tv(
       'font-semibold',
       'cursor-pointer',
       'overflow-hidden',
-      'transform-gpu duration-200 active:scale-97',
     ],
     variants: {
       color: {
