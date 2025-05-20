@@ -20,6 +20,12 @@ const nextConfig = {
       use: 'raw-loader',
     })
 
+    config.module.rules.push({
+      test: /\.svg$/, // .svg 파일만 처리
+      issuer: /\.(js|ts)x?$/, // .js, .jsx, .ts, .tsx 파일에서 import
+      use: ['@svgr/webpack'],
+    })
+
     return config
   },
 }

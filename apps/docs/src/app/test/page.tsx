@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@repo/ui/components/button'
+import { Icon } from '@repo/ui/components/icon'
 import {
   Tabs,
   TabsContent,
@@ -41,6 +42,7 @@ export default function Page() {
       >
         쿄쿄
       </button>
+      <Icon icon="add" />
     </>
   )
 }
