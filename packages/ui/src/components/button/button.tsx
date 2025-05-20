@@ -35,6 +35,7 @@ export function Button(props: ButtonProps) {
     className,
     isDisabled,
     fullWidth,
+    role = 'button',
     onPress,
     ...otherProps
   } = props
@@ -79,6 +80,7 @@ export function Button(props: ButtonProps) {
 
   return (
     <Comp
+      role={role}
       data-slot="button"
       ref={mergeRefs([innerRef, scope, ref])}
       disabled={isDisabled}

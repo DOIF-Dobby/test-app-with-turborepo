@@ -61,6 +61,7 @@
 [data-theme='switchui-light'] {
   --sone-background: oklch(1 0 0);
   --sone-consistent-white: oklch(1 0 0);
+  --sone-focus-ring: oklch(0.26 0.0343 264.71);
 
   --sone-gray-0: oklch(0.98 0.0017 247.84);
   --sone-gray-100: oklch(0.96 0.0029 264.54);
@@ -99,6 +100,7 @@
 [data-theme='switchui-dark'] {
   --sone-background: oklch(0.23 0.0171 248.59);
   --sone-consistent-white: oklch(1 0 0);
+  --sone-focus-ring: oklch(0.75 0.1663 62.59);
 
   --sone-gray-0: oklch(0 0 0);
   --sone-gray-100: oklch(0.31 0.0226 248.56);
@@ -136,6 +138,7 @@
 @theme {
   --color-background: var(--sone-background);
   --color-consistent-white: var(--sone-consistent-white);
+  --color-focus-ring: var(--sone-focus-ring);
 
   --color-base-0: var(--sone-gray-0);
   --color-base-100: var(--sone-gray-100);
@@ -208,6 +211,14 @@
   --text-button-xs: var(--sone-typography-button-xs);
   --text-button-sm: var(--sone-typography-button-sm);
   --text-button-md: var(--sone-typography-button-md);
+}
+
+:focus {
+  @apply outline-none;
+}
+
+:focus-visible {
+  @apply outline-focus-ring outline-[1.5px] outline-offset-[1.5px] outline-solid;
 }
 
 /* @plugin 'daisyui/theme' {
