@@ -1,18 +1,23 @@
+import { cn } from '../../utils/cn'
 import { icons, IconType } from './icons'
+import { iconVariants, IconVariants } from './variants'
 
-export interface BaseIconProps {
+type Props = Omit<React.SVGProps<SVGSVGElement>, keyof IconVariants> &
+  IconVariants
+
+export interface IconProps extends Props {
   icon: IconType
 }
 
-export type IconProps = Omit<
-  React.SVGProps<SVGSVGElement>,
-  keyof BaseIconProps
-> &
-  BaseIconProps
-
 export function Icon(props: IconProps) {
-  const { icon, ...otherProps } = props
+  const { icon, color, size, className, ...otherProps } = props
   const SVGIcon = icons[icon]
 
-  return <SVGIcon className="size-6 fill-current" {...otherProps} />
+  const styles = iconVariants({
+    color,
+    size,
+    className,
+  })
+
+  return <SVGIcon className={cn(styles)} {...otherProps} />
 }

@@ -42,7 +42,10 @@ export default function Page() {
       >
         쿄쿄
       </button>
-      <Icon icon="add" />
+      <Icon icon="add" color="destructive" />
+      <Button>
+        <Icon icon="accessTime" />
+      </Button>
     </>
   )
 }
