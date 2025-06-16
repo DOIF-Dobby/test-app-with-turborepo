@@ -1,6 +1,11 @@
 'use client'
 
 import { Button } from '@repo/ui/components/button'
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@repo/ui/components/collapsible'
 import { Icon } from '@repo/ui/components/icon'
 import {
   Tabs,
@@ -46,6 +51,11 @@ export default function Page() {
       <Button>
         <Icon icon="accessTime" />
       </Button>
+
+      <Collapsible defaultOpen className="bg-red-200">
+        <CollapsibleTrigger className="bg-blue-200">하하</CollapsibleTrigger>
+        <CollapsibleContent className="bg-green-200">호호</CollapsibleContent>
+      </Collapsible>
     </>
   )
 }

@@ -1,15 +1,18 @@
 import DocsHeader from '@/components/navigation/docs-header'
 import DocsMenus from '@/components/navigation/docs-menus'
+import { gatherContentSlugs } from '@/utils/gather-slugs'
 
-export default function DocsLayout({
+export default async function DocsLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const contentPathArrays = await gatherContentSlugs()
+
   return (
     <>
       <div className="flex">
-        <DocsMenus />
+        <DocsMenus contentPathArrays={contentPathArrays} />
         <div className="w-full">
           <DocsHeader />
           <div className="flex flex-col-reverse justify-between gap-6 xl:flex-row">

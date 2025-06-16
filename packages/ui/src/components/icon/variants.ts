@@ -5,6 +5,8 @@ export const iconVariants = tv({
   base: '',
   variants: {
     size: {
+      xs: 'size-4',
+      sm: 'size-5',
       md: 'size-6',
     },
     color: {

@@ -16,6 +16,7 @@ import creditCard from './svgs/credit_card.svg'
 import deleteIcon from './svgs/delete.svg'
 import download from './svgs/download.svg'
 import exitToApp from './svgs/exit_to_app.svg'
+import expandLess from './svgs/expand_less.svg'
 import filterAlt from './svgs/filter_alt.svg'
 import helpFill from './svgs/help_fill.svg'
 import language from './svgs/language.svg'
@@ -76,6 +77,7 @@ export const icons = {
   trendingUp,
   analytics,
   menu,
+  expandLess,
 } as const
 
 export type IconType = keyof typeof icons
