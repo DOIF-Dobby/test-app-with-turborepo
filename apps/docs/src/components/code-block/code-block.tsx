@@ -14,7 +14,7 @@ interface Props {
 
 export function CodeBlock({ preview, code }: Props) {
   return (
-    <Tabs defaultValue="preview" variant="border">
+    <Tabs defaultValue="preview">
       <TabsList>
         <TabsTrigger value="preview">Preview</TabsTrigger>
         <TabsTrigger value="code">Code</TabsTrigger>
@@ -25,7 +25,13 @@ export function CodeBlock({ preview, code }: Props) {
         </div>
       </TabsContent>
       <TabsContent value="code">
-        <SyntaxHighlighter language="tsx" style={style}>
+        <SyntaxHighlighter
+          language="tsx"
+          customStyle={{
+            margin: 0,
+          }}
+          style={style}
+        >
           {code}
         </SyntaxHighlighter>
       </TabsContent>

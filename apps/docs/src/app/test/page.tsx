@@ -20,7 +20,7 @@ export default function Page() {
 
   return (
     <>
-      <Tabs defaultValue="2" variant="lift">
+      <Tabs defaultValue="2">
         <TabsList>
           <TabsTrigger value="1">Tab 1</TabsTrigger>
           <TabsTrigger value="2">Tab 2</TabsTrigger>

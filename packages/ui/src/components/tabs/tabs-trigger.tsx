@@ -10,7 +10,7 @@ type Props = TabsPrimitive.TabsTriggerProps
 export interface TabsTriggerProps extends Props {}
 
 export function TabsTrigger(props: TabsTriggerProps) {
-  const { className, ...otherProps } = props
+  const { children, className, ...otherProps } = props
   const context = useTabsContext()
 
   const slots = tabsVariatns()
@@ -19,5 +19,9 @@ export function TabsTrigger(props: TabsTriggerProps) {
     className: cn(context.classNames?.tabTrigger, className),
   })
 
-  return <TabsPrimitive.TabsTrigger className={cn(styles)} {...otherProps} />
+  return (
+    <TabsPrimitive.TabsTrigger className={cn(styles)} {...otherProps}>
+      {children}
+    </TabsPrimitive.TabsTrigger>
+  )
 }
