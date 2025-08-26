@@ -21,7 +21,7 @@ export default function Page() {
 
   return (
     <div className="p-20">
-      <Tabs value={tab} onValueChange={setTab} variant="solid">
+      <Tabs value={tab} onValueChange={setTab} variant="underlined">
         <TabsList>
           <TabsTrigger value="1">Tab 1</TabsTrigger>
           <TabsTrigger value="2">Tab 2</TabsTrigger>

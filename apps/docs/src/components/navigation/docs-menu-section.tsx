@@ -31,7 +31,7 @@ export function DocsMenuSection({ title, contentPaths }: DocsMenuSectionProps) {
         />
       </CollapsibleTrigger>
       <CollapsibleContent>
-        <ul className="pt-sone-2xs pb-sone-sm">
+        <ul className="pt-sone-2xs pb-sone-sm gap-sone-3xs flex flex-col">
           {contentPaths.map((contentPath) => {
             const href = `/docs/${contentPath.join('/')}`
 

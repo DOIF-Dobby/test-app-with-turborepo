@@ -19,7 +19,7 @@ export default function DocsMenus({ contentPathArrays }: DocsMenusProps) {
   }, [contentPathArrays])
 
   return (
-    <aside className="border-r-base-200 bg-background sticky top-0 z-40 h-full min-h-dvh min-w-3xs border-r">
+    <aside className="border-r-base-200 bg-background pt-sone-md sticky top-0 z-40 h-full min-h-dvh min-w-3xs border-r">
       <DocsMenuSection title="Guides" contentPaths={guides} />
       <DocsMenuSection title="Components" contentPaths={components} />
     </aside>
