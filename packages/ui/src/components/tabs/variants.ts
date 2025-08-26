@@ -9,16 +9,10 @@ export const tabsVariatns = tv({
       'data-[orientation=horizontal]:flex-col',
       'data-[orientation=vertical]:flex-row',
     ],
-    tabList: [
-      'border-b',
-      'border-b-base-200',
-      'flex',
-      'gap-2',
-      'w-fit',
-      'px-2',
-    ],
+    tabList: ['flex', 'gap-2', 'w-fit', 'px-2'],
     tabTrigger: [
       'relative',
+      'z-0',
       'flex',
       'justify-center',
       'cursor-pointer',
@@ -26,15 +20,44 @@ export const tabsVariatns = tv({
       'py-2',
       'data-[state=active]:text-base-700',
       'data-[state=active]:font-medium',
-      'data-[state=active]:border-b-2',
-      'data-[state=active]:border-b-cta1',
+      // 'data-[state=active]:border-b-2',
+      // 'data-[state=active]:border-b-cta1',
       'data-[state=inactive]:text-base-600',
     ],
     tabContent: '',
+    cursor: '',
   },
   variants: {
     size: {},
-    variant: {},
+    variant: {
+      solid: {
+        tabList: ['bg-base-100', 'py-1'],
+        cursor: ['absolute', 'inset-0', 'z-0', 'bg-background'],
+      },
+      underlined: {
+        tabList: ['bg-transparent', 'border-b', 'border-b-base-200'],
+        cursor: ['absolute', 'inset-0', 'z-0', 'border-b-2', 'border-b-cta1'],
+      },
+    },
+    radius: {
+      md: {
+        tabList: ['rounded-md'],
+        cursor: ['rounded-md'],
+      },
+      none: {
+        tabList: ['rounded-none'],
+        cursor: ['rounded-none'],
+      },
+    },
+  },
+  compoundVariants: [
+    {
+      variant: 'underlined',
+    },
+  ],
+  defaultVariants: {
+    variant: 'solid',
+    radius: 'md',
   },
 })
 

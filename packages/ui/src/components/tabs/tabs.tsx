@@ -13,8 +13,16 @@ export interface TabsProps extends Props {
 }
 
 export function Tabs(props: TabsProps) {
-  const { children, className, classNames, size, variant, ...otherProps } =
-    props
+  const {
+    children,
+    className,
+    classNames,
+    size,
+    variant,
+    radius,
+    value,
+    ...otherProps
+  } = props
 
   const slots = tabsVariatns()
 
@@ -23,12 +31,14 @@ export function Tabs(props: TabsProps) {
   })
 
   return (
-    <TabsPrimitive.Root className={cn(styles)} {...otherProps}>
+    <TabsPrimitive.Root className={cn(styles)} value={value} {...otherProps}>
       <TabsContext
         value={{
           classNames,
           size,
           variant,
+          radius,
+          value,
         }}
       >
         {children}

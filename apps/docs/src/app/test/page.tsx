@@ -13,14 +13,15 @@ import {
   TabsList,
   TabsTrigger,
 } from '@repo/ui/components/tabs'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 export default function Page() {
   const ref = useRef<HTMLButtonElement>(null)
+  const [tab, setTab] = useState('1')
 
   return (
-    <>
-      <Tabs defaultValue="2">
+    <div className="p-20">
+      <Tabs value={tab} onValueChange={setTab} variant="underlined">
         <TabsList>
           <TabsTrigger value="1">Tab 1</TabsTrigger>
           <TabsTrigger value="2">Tab 2</TabsTrigger>
@@ -30,6 +31,16 @@ export default function Page() {
         <TabsContent value="2">탭2</TabsContent>
         <TabsContent value="3">탭3</TabsContent>
       </Tabs>
+      {/* <Tabs value={tab} onValueChange={setTab} variant="underlined">
+        <TabsList>
+          <TabsTrigger value="1">Tab 1</TabsTrigger>
+          <TabsTrigger value="2">Tab 2</TabsTrigger>
+          <TabsTrigger value="3">Tab 3</TabsTrigger>
+        </TabsList>
+        <TabsContent value="1">탭1</TabsContent>
+        <TabsContent value="2">탭2</TabsContent>
+        <TabsContent value="3">탭3</TabsContent>
+      </Tabs> */}
       <Button
         ref={ref}
         onPress={() => {
@@ -56,6 +67,6 @@ export default function Page() {
         <CollapsibleTrigger className="bg-blue-200">하하</CollapsibleTrigger>
         <CollapsibleContent className="bg-green-200">호호</CollapsibleContent>
       </Collapsible>
-    </>
+    </div>
   )
 }

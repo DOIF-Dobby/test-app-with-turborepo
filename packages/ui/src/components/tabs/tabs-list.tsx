@@ -19,6 +19,7 @@ export function TabsList(props: TabsListProps) {
     className: cn(context.classNames?.tabList, className),
     size: context.size,
     variant: context.variant,
+    radius: context.radius,
   })
 
   return <TabsPrimitive.TabsList className={cn(styles)} {...otherProps} />

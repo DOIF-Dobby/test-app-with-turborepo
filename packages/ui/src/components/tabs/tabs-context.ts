@@ -6,6 +6,8 @@ type TabsContextType = {
   classNames?: SlotsToClasses<TabsSlots>
   size?: TabsVariants['size']
   variant?: TabsVariants['variant']
+  radius?: TabsVariants['radius']
+  value?: string
 }
 
 export const TabsContext = createContext<TabsContextType>({})
