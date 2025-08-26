@@ -84,12 +84,12 @@ export function Base() {
   )
 }
 
-export function Index() {
+export function Status() {
   return (
     <div className="flex flex-wrap gap-4">
-      <ColorBox className="bg-index-good">Good</ColorBox>
-      <ColorBox className="bg-index-fair">Fair</ColorBox>
-      <ColorBox className="bg-index-poor">Poor</ColorBox>
+      <ColorBox className="bg-status-good">Good</ColorBox>
+      <ColorBox className="bg-status-fair">Fair</ColorBox>
+      <ColorBox className="bg-status-poor">Poor</ColorBox>
     </div>
   )
 }

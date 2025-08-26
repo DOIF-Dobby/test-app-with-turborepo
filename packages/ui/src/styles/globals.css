@@ -1,10 +1,9 @@
 @import 'tailwindcss';
-/* @plugin 'daisyui'; */
 
 :root {
-  --sone-index-good: oklch(0.74 0.1701 153.32);
-  --sone-index-fair: oklch(0.79 0.1572 64.15);
-  --sone-index-poor: oklch(0.67 0.2106 24.78);
+  --sone-status-good: oklch(0.74 0.1701 153.32);
+  --sone-status-fair: oklch(0.79 0.1572 64.15);
+  --sone-status-poor: oklch(0.67 0.2106 24.78);
 
   --sone-spacing-4xs: 2px;
   --sone-spacing-3xs: 4px;
@@ -34,6 +33,60 @@
   --sone-typography-button-xs: 14px;
   --sone-typography-button-sm: 16px;
   --sone-typography-button-md: 16px;
+
+  /* heading */
+  --sone-heading-0-size: 48px;
+  --sone-heading-0-weight: 600;
+  --sone-heading-0-line-height: 133%;
+
+  --sone-heading-1-size: 32px;
+  --sone-heading-1-weight: 500;
+  --sone-heading-1-line-height: 133%;
+
+  --sone-heading-2-size: 24px;
+  --sone-heading-2-weight: 700;
+  --sone-heading-2-line-height: 133%;
+
+  --sone-heading-3-size: 20px;
+  --sone-heading-3-weight: 700;
+  --sone-heading-3-line-height: 133%;
+
+  --sone-heading-4-size: 18px;
+  --sone-heading-4-weight: 600;
+  --sone-heading-4-line-height: 133%;
+
+  --sone-heading-5-size: 16px;
+  --sone-heading-5-weight: 500;
+  --sone-heading-5-line-height: 150%;
+
+  --sone-heading-6-size: 16px;
+  --sone-heading-6-weight: 400;
+  --sone-heading-6-line-height: 150%;
+
+  /* paragraph */
+  --sone-paragraph-1-size: 14px;
+  --sone-paragraph-1-weight: 500;
+  --sone-paragraph-1-line-height: 150%;
+
+  --sone-paragraph-2-size: 14px;
+  --sone-paragraph-2-weight: 400;
+  --sone-paragraph-2-line-height: 150%;
+
+  --sone-paragraph-3-size: 12px;
+  --sone-paragraph-3-weight: 500;
+  --sone-paragraph-3-line-height: 150%;
+
+  --sone-paragraph-4-size: 12px;
+  --sone-paragraph-4-weight: 400;
+  --sone-paragraph-4-line-height: 150%;
+
+  --sone-paragraph-5-size: 11px;
+  --sone-paragraph-5-weight: 500;
+  --sone-paragraph-5-line-height: 150%;
+
+  --sone-paragraph-6-size: 11px;
+  --sone-paragraph-6-weight: 400;
+  --sone-paragraph-6-line-height: 150%;
 }
 
 /* 넓이가 1200px 이상일 때 */
@@ -54,6 +107,60 @@
     --sone-spacing-4xl: 96px;
     --sone-spacing-page-without-nav: 120px;
     --sone-spacing-page-with-nav: 64px;
+
+    /* heading */
+    --sone-heading-0-size: 64px;
+    --sone-heading-0-weight: 600;
+    --sone-heading-0-line-height: 133%;
+
+    --sone-heading-1-size: 48px;
+    --sone-heading-1-weight: 500;
+    --sone-heading-1-line-height: 133%;
+
+    --sone-heading-2-size: 32px;
+    --sone-heading-2-weight: 700;
+    --sone-heading-2-line-height: 133%;
+
+    --sone-heading-3-size: 24px;
+    --sone-heading-3-weight: 700;
+    --sone-heading-3-line-height: 133%;
+
+    --sone-heading-4-size: 20px;
+    --sone-heading-4-weight: 600;
+    --sone-heading-4-line-height: 133%;
+
+    --sone-heading-5-size: 16px;
+    --sone-heading-5-weight: 500;
+    --sone-heading-5-line-height: 150%;
+
+    --sone-heading-6-size: 16px;
+    --sone-heading-6-weight: 400;
+    --sone-heading-6-line-height: 150%;
+
+    /* paragraph */
+    --sone-paragraph-1-size: 14px;
+    --sone-paragraph-1-weight: 500;
+    --sone-paragraph-1-line-height: 150%;
+
+    --sone-paragraph-2-size: 14px;
+    --sone-paragraph-2-weight: 400;
+    --sone-paragraph-2-line-height: 150%;
+
+    --sone-paragraph-3-size: 12px;
+    --sone-paragraph-3-weight: 500;
+    --sone-paragraph-3-line-height: 150%;
+
+    --sone-paragraph-4-size: 12px;
+    --sone-paragraph-4-weight: 400;
+    --sone-paragraph-4-line-height: 150%;
+
+    --sone-paragraph-5-size: 11px;
+    --sone-paragraph-5-weight: 500;
+    --sone-paragraph-5-line-height: 150%;
+
+    --sone-paragraph-6-size: 11px;
+    --sone-paragraph-6-weight: 400;
+    --sone-paragraph-6-line-height: 150%;
   }
 }
 
@@ -140,6 +247,10 @@
   --color-consistent-white: var(--sone-consistent-white);
   --color-focus-ring: var(--sone-focus-ring);
 
+  --color-status-good: var(--sone-status-good);
+  --color-status-fair: var(--sone-status-fair);
+  --color-status-poor: var(--sone-status-poor);
+
   --color-base-0: var(--sone-gray-0);
   --color-base-100: var(--sone-gray-100);
   --color-base-200: var(--sone-gray-200);
@@ -151,7 +262,7 @@
   --color-base-800: var(--sone-gray-800);
   --color-base-900: var(--sone-gray-900);
 
-  --color-base-content: var(--sone-cta1);
+  --color-base-content: var(--sone-gray-900);
 
   --color-cta1: var(--sone-cta1);
   --color-cta1-hover: var(--sone-cta1-hover);
@@ -178,10 +289,6 @@
     --sone-destructive-secondary-pressed
   );
   --color-destructive-content: var(--sone-consistent-white);
-
-  --color-index-good: var(--sone-index-good);
-  --color-index-fair: var(--sone-index-fair);
-  --color-index-poor: var(--sone-index-poor);
 
   --spacing-sone-4xs: var(--sone-spacing-4xs);
   --spacing-sone-3xs: var(--sone-spacing-3xs);
@@ -211,56 +318,61 @@
   --text-button-xs: var(--sone-typography-button-xs);
   --text-button-sm: var(--sone-typography-button-sm);
   --text-button-md: var(--sone-typography-button-md);
+
+  --shadow-card-ml: 0 2px 40px 0 rgba(0, 0, 0, 0.1);
+
+  /* heading */
+  --text-heading-0: var(--sone-heading-0-size);
+  --text-heading-1: var(--sone-heading-1-size);
+  --text-heading-2: var(--sone-heading-2-size);
+  --text-heading-3: var(--sone-heading-3-size);
+  --text-heading-4: var(--sone-heading-4-size);
+  --text-heading-5: var(--sone-heading-5-size);
+  --text-heading-6: var(--sone-heading-6-size);
+
+  --font-weight-heading-0: var(--sone-heading-0-weight);
+  --font-weight-heading-1: var(--sone-heading-1-weight);
+  --font-weight-heading-2: var(--sone-heading-2-weight);
+  --font-weight-heading-3: var(--sone-heading-3-weight);
+  --font-weight-heading-4: var(--sone-heading-4-weight);
+  --font-weight-heading-5: var(--sone-heading-5-weight);
+  --font-weight-heading-6: var(--sone-heading-6-weight);
+
+  --leading-heading-0: var(--sone-heading-0-line-height);
+  --leading-heading-1: var(--sone-heading-1-line-height);
+  --leading-heading-2: var(--sone-heading-2-line-height);
+  --leading-heading-3: var(--sone-heading-3-line-height);
+  --leading-heading-4: var(--sone-heading-4-line-height);
+  --leading-heading-5: var(--sone-heading-5-line-height);
+  --leading-heading-6: var(--sone-heading-6-line-height);
+
+  /* paragraph */
+  --text-paragraph-1: var(--sone-paragraph-1-size);
+  --text-paragraph-2: var(--sone-paragraph-2-size);
+  --text-paragraph-3: var(--sone-paragraph-3-size);
+  --text-paragraph-4: var(--sone-paragraph-4-size);
+  --text-paragraph-5: var(--sone-paragraph-5-size);
+  --text-paragraph-6: var(--sone-paragraph-6-size);
+
+  --font-weight-paragraph-1: var(--sone-paragraph-1-weight);
+  --font-weight-paragraph-2: var(--sone-paragraph-2-weight);
+  --font-weight-paragraph-3: var(--sone-paragraph-3-weight);
+  --font-weight-paragraph-4: var(--sone-paragraph-4-weight);
+  --font-weight-paragraph-5: var(--sone-paragraph-5-weight);
+  --font-weight-paragraph-6: var(--sone-paragraph-6-weight);
+
+  --leading-paragraph-1: var(--sone-paragraph-1-line-height);
+  --leading-paragraph-2: var(--sone-paragraph-2-line-height);
+  --leading-paragraph-3: var(--sone-paragraph-3-line-height);
+  --leading-paragraph-4: var(--sone-paragraph-4-line-height);
+  --leading-paragraph-5: var(--sone-paragraph-5-line-height);
+  --leading-paragraph-6: var(--sone-paragraph-6-line-height);
 }
 
-:focus {
+/* :focus {
   @apply outline-none;
 }
 
 :focus-visible {
   @apply outline-focus-ring outline-[1.5px] outline-offset-[1.5px] outline-solid;
-}
-
-/* @plugin 'daisyui/theme' {
-  name: 'switchui-light';
-  default: true;
-  prefersdark: false;
-  color-scheme: light;
-
-  --color-base-100: var(--sone-gray-100);
-  --color-base-200: var(--sone-gray-200);
-  --color-base-300: var(--sone-gray-300);
-  --color-base-content: var(--sone-cta1);
-
-  --color-primary: var(--sone-cta1);
-  --color-primary-content: var(--sone-consistent-white);
-
-  --color-secondary: var(--sone-cta2);
-  --color-secondary-content: var(--sone-consistent-white);
-
-  --color-success: var(--sone-index-good);
-  --color-success-content: var(--sone-consistent-white);
-
-  --color-error: var(--sone-index-poor);
-  --color-error-content: var(--sone-consistent-white);
-}
-
-@plugin 'daisyui/theme' {
-  name: 'switchui-dark';
-  prefersdark: true;
-  color-scheme: dark;
-
-  --color-base-100: var(--sone-gray-100);
-  --color-base-200: var(--sone-gray-200);
-  --color-base-300: var(--sone-gray-300);
-  --color-base-content: var(--sone-gray-900);
-
-  --color-primary: var(--sone-cta1);
-  --color-primary-content: var(--sone-consistent-white);
-
-  --color-secondary: var(--sone-cta2);
-  --color-secondary-content: var(--sone-consistent-white);
-
-  --color-success: var(--sone-index-good);
-  --color-success-content: var(--sone-consistent-white);
 } */

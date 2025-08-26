@@ -24,7 +24,7 @@ export const tabsVariatns = tv({
       'data-[state=inactive]:disabled:text-base-400',
       '[&:not(:disabled)]:cursor-pointer',
     ],
-    tabContent: '',
+    tabContent: ['text-base-content'],
     cursor: '',
   },
   variants: {
@@ -36,7 +36,13 @@ export const tabsVariatns = tv({
       },
       underlined: {
         tabList: ['bg-transparent', 'border-b', 'border-b-base-200'],
-        cursor: ['absolute', 'inset-0', 'z-0', 'border-b-2', 'border-b-cta1'],
+        cursor: [
+          'absolute',
+          'inset-0',
+          'z-0',
+          'border-b-2',
+          'border-b-base-content',
+        ],
       },
     },
     radius: {

@@ -1,7 +1,7 @@
+@plugin '@tailwindcss/typography';
 @import '@repo/ui/styles.css';
+
 @import '../styles/rehype-pretty.css';
 @import '../styles/markdown.css';
-
-@plugin '@tailwindcss/typography';
 
 @source '../../../../packages/ui/src';
