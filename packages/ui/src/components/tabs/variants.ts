@@ -53,6 +53,10 @@ export const tabsVariatns = tv({
   compoundVariants: [
     {
       variant: 'underlined',
+      class: {
+        tabList: ['rounded-none'],
+        cursor: ['rounded-none'],
+      },
     },
   ],
   defaultVariants: {

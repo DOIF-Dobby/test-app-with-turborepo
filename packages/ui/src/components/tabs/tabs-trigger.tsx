@@ -38,7 +38,7 @@ export function TabsTrigger(props: TabsTriggerProps) {
           <m.span
             className={cursorStyles}
             layoutDependency={false}
-            layoutId="cursor"
+            layoutId={`cursor-${context.tabsId}`}
             transition={{
               type: 'spring',
               bounce: 0.15,

@@ -1,9 +1,12 @@
+'use client'
+
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from '@repo/ui/components/tabs'
+import { useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark as style } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
@@ -13,8 +16,10 @@ interface Props {
 }
 
 export function CodeBlock({ preview, code }: Props) {
+  const [tab, setTab] = useState('preview')
+
   return (
-    <Tabs defaultValue="preview">
+    <Tabs value={tab} onValueChange={setTab} variant="underlined">
       <TabsList>
         <TabsTrigger value="preview">Preview</TabsTrigger>
         <TabsTrigger value="code">Code</TabsTrigger>
