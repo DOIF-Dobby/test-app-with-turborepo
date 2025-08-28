@@ -1,6 +1,7 @@
 'use client'
 
 import { useDisclosure } from '@repo/hooks/use-disclosure'
+import { ContentBox } from '@repo/ui/components/box'
 import { Button } from '@repo/ui/components/button'
 import {
   Collapsible,
@@ -38,7 +39,13 @@ export default function Page() {
 
       <Heading0>안녕하세요</Heading0>
 
-      <Modal isOpen={isOpen}>안녕하세요</Modal>
+      <Modal
+        title="Heading"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        isOpen={isOpen}
+      >
+        <ContentBox>안녕하세요</ContentBox>
+      </Modal>
 
       <Button
         ref={ref}

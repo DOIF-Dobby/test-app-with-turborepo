@@ -53,6 +53,7 @@ const leadingGroups = [
 ]
 
 const colorGroups = [
+  'base-content',
   'cta1',
   'cta2',
   'destructive',
