@@ -17,14 +17,21 @@ export const modalVariants = tv({
       'outline-none',
       'focus:outline-8',
       'focus-visible:outline-8',
+      'z-50',
     ],
-    modalOverlay: ['fixed', 'inset-0', 'bg-black/60'],
+    modalOverlay: ['fixed', 'inset-0', 'bg-black/60', 'z-50'],
     modalCloseButton: ['absolute', 'top-2', 'right-2'],
   },
   variants: {
     size: {
+      sm: {
+        modalContent: ['w-100'],
+      },
       md: {
         modalContent: ['w-120'],
+      },
+      lg: {
+        modalContent: ['w-140'],
       },
     },
   },

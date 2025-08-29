@@ -43,17 +43,19 @@ export default function Page() {
         state={modalState}
         title="Heading"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        hideCloseButton
       >
         <ContentBox>
           <div>안녕ㅏ세요</div>
           <div>반갑습니다.</div>
+
+          <input className="bg-red-200" />
         </ContentBox>
       </Modal>
 
       <Button
         ref={ref}
         onPress={() => {
-          console.log('테스트')
           modalState.open()
         }}
       >
@@ -77,6 +79,8 @@ export default function Page() {
         <CollapsibleTrigger className="bg-blue-200">하하</CollapsibleTrigger>
         <CollapsibleContent className="bg-green-200">호호</CollapsibleContent>
       </Collapsible>
+
+      <div className="h-[1000px]">엄첨 김</div>
     </div>
   )
 }

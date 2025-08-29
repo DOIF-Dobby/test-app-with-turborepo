@@ -25,6 +25,12 @@ export interface ModalProps extends Props {
   description?: React.ReactNode
   classNames?: SlotsToClasses<ModalSlots>
   closeButton?: React.ReactNode
+  // true면 닫기 버튼 숨김
+  hideCloseButton?: boolean
+  // true면 마우스 클릭, 터치 이벤트 등으로 모달 밖을 클릭했을 때 모달 닫힘
+  isPointerDismissible?: boolean
+  // true면 ESC키를 눌렀을 때 모달 닫힘
+  isKeyboardDismissible?: boolean
 }
 
 export function Modal(props: ModalProps) {
@@ -35,6 +41,9 @@ export function Modal(props: ModalProps) {
     title,
     description = '',
     closeButton = <DefaultModalCloseButton />,
+    hideCloseButton = false,
+    isPointerDismissible = true,
+    isKeyboardDismissible = true,
     size,
     ...otherProps
   } = props
@@ -84,7 +93,19 @@ export function Modal(props: ModalProps) {
     <DialogPrimitive.Root {...otherProps} modal open={isOpen}>
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className={twcn(overlayStyles)} />
-        <DialogPrimitive.Content className={twcn(contentStyles)}>
+        <DialogPrimitive.Content
+          className={twcn(contentStyles)}
+          onPointerDownOutside={() => {
+            if (isPointerDismissible) {
+              state.close()
+            }
+          }}
+          onEscapeKeyDown={() => {
+            if (isKeyboardDismissible) {
+              state.close()
+            }
+          }}
+        >
           <ContentBox>
             <DialogPrimitive.Title asChild>{modalTitle}</DialogPrimitive.Title>
             <DialogPrimitive.Description asChild>
@@ -92,13 +113,15 @@ export function Modal(props: ModalProps) {
             </DialogPrimitive.Description>
           </ContentBox>
           {children}
-          <DialogPrimitive.Close
-            asChild
-            className={twcn(closeButtonStyles)}
-            {...closeButtonPressProps}
-          >
-            {closeButton}
-          </DialogPrimitive.Close>
+          {!hideCloseButton && (
+            <DialogPrimitive.Close
+              asChild
+              className={twcn(closeButtonStyles)}
+              {...closeButtonPressProps}
+            >
+              {closeButton}
+            </DialogPrimitive.Close>
+          )}
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>
