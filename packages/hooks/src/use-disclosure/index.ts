@@ -20,10 +20,15 @@ export function useDisclosure(props: UseDisclosureProps = {}) {
     setIsOpen(false)
   }, [])
 
+  const toggle = useCallback(() => {
+    setIsOpen((prev) => !prev)
+  }, [])
+
   return {
     isOpen,
     open,
     close,
+    toggle,
   }
 }
 

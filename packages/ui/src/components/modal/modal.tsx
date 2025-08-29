@@ -1,5 +1,6 @@
 import { usePress } from '@react-aria/interactions'
 import { UseDisclosureReturn } from '@repo/hooks/use-disclosure'
+import { AnimatePresence, motion } from 'motion/react'
 import { Dialog as DialogPrimitive } from 'radix-ui'
 import { useMemo } from 'react'
 import { SlotsToClasses } from '../../types/util'
@@ -91,39 +92,54 @@ export function Modal(props: ModalProps) {
 
   return (
     <DialogPrimitive.Root {...otherProps} modal open={isOpen}>
-      <DialogPrimitive.Portal>
-        <DialogPrimitive.Overlay className={twcn(overlayStyles)} />
-        <DialogPrimitive.Content
-          className={twcn(contentStyles)}
-          onPointerDownOutside={() => {
-            if (isPointerDismissible) {
-              state.close()
-            }
-          }}
-          onEscapeKeyDown={() => {
-            if (isKeyboardDismissible) {
-              state.close()
-            }
-          }}
-        >
-          <ContentBox>
-            <DialogPrimitive.Title asChild>{modalTitle}</DialogPrimitive.Title>
-            <DialogPrimitive.Description asChild>
-              {modalDescription}
-            </DialogPrimitive.Description>
-          </ContentBox>
-          {children}
-          {!hideCloseButton && (
-            <DialogPrimitive.Close
+      <AnimatePresence>
+        {isOpen ? (
+          <DialogPrimitive.Portal forceMount>
+            <DialogPrimitive.Overlay className={twcn(overlayStyles)} />
+            <DialogPrimitive.Content
               asChild
-              className={twcn(closeButtonStyles)}
-              {...closeButtonPressProps}
+              className={twcn(contentStyles)}
+              onPointerDownOutside={() => {
+                if (isPointerDismissible) {
+                  state.close()
+                }
+              }}
+              onEscapeKeyDown={() => {
+                if (isKeyboardDismissible) {
+                  state.close()
+                }
+              }}
             >
-              {closeButton}
-            </DialogPrimitive.Close>
-          )}
-        </DialogPrimitive.Content>
-      </DialogPrimitive.Portal>
+              {state.isOpen ? (
+                <motion.div
+                  initial={{ y: 500, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 10, opacity: 0 }}
+                >
+                  <ContentBox>
+                    <DialogPrimitive.Title asChild>
+                      {modalTitle}
+                    </DialogPrimitive.Title>
+                    <DialogPrimitive.Description asChild>
+                      {modalDescription}
+                    </DialogPrimitive.Description>
+                  </ContentBox>
+                  {children}
+                  {!hideCloseButton && (
+                    <DialogPrimitive.Close
+                      asChild
+                      className={twcn(closeButtonStyles)}
+                      {...closeButtonPressProps}
+                    >
+                      {closeButton}
+                    </DialogPrimitive.Close>
+                  )}
+                </motion.div>
+              ) : null}
+            </DialogPrimitive.Content>
+          </DialogPrimitive.Portal>
+        ) : null}
+      </AnimatePresence>
     </DialogPrimitive.Root>
   )
 }

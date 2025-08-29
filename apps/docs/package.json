@@ -34,7 +34,8 @@
     "remark-mdx-frontmatter": "^5.1.0",
     "shiki": "^3.3.0",
     "unist-util-mdx-define": "^1.1.2",
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.0.0",
+    "motion": "^12.11.4"
   },
   "devDependencies": {
     "@repo/config-eslint": "workspace:*",

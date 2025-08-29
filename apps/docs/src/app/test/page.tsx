@@ -1,7 +1,6 @@
 'use client'
 
 import { useDisclosure } from '@repo/hooks/use-disclosure'
-import { ContentBox } from '@repo/ui/components/box'
 import { Button } from '@repo/ui/components/button'
 import {
   Collapsible,
@@ -9,7 +8,6 @@ import {
   CollapsibleTrigger,
 } from '@repo/ui/components/collapsible'
 import { Icon } from '@repo/ui/components/icon'
-import { Modal } from '@repo/ui/components/modal'
 import {
   Tabs,
   TabsContent,
@@ -17,6 +15,7 @@ import {
   TabsTrigger,
 } from '@repo/ui/components/tabs'
 import { Heading0 } from '@repo/ui/components/typography'
+import { AnimatePresence, motion } from 'motion/react'
 import { useRef, useState } from 'react'
 
 export default function Page() {
@@ -39,7 +38,26 @@ export default function Page() {
 
       <Heading0>안녕하세요</Heading0>
 
-      <Modal
+      <AnimatePresence>
+        {modalState.isOpen ? (
+          <motion.div
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 10, opacity: 0 }}
+          >
+            뭐지
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+
+      <motion.div
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+      >
+        뭐지2
+      </motion.div>
+
+      {/* <Modal
         state={modalState}
         title="Heading"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -51,12 +69,13 @@ export default function Page() {
 
           <input className="bg-red-200" />
         </ContentBox>
-      </Modal>
+      </Modal> */}
 
       <Button
         ref={ref}
         onPress={() => {
-          modalState.open()
+          // modalState.open()
+          modalState.toggle()
         }}
       >
         테스트
