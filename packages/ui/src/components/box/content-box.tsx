@@ -7,11 +7,12 @@ type Props = Omit<HTMLAttributes<HTMLDivElement>, keyof ContentBoxVariants> &
 export interface ContentBoxProps extends Props {}
 
 export function ContentBox(props: ContentBoxProps) {
-  const { children, className, direction, ...otherProps } = props
+  const { children, className, direction, gap, ...otherProps } = props
 
   const styles = contentBoxVariants({
     className,
     direction,
+    gap,
   })
 
   return (

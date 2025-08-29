@@ -1,8 +1,12 @@
+import { usePress } from '@react-aria/interactions'
+import { UseDisclosureReturn } from '@repo/hooks/use-disclosure'
 import { Dialog as DialogPrimitive } from 'radix-ui'
 import { useMemo } from 'react'
 import { SlotsToClasses } from '../../types/util'
 import { cn } from '../../utils/cn'
 import { ContentBox } from '../box'
+import { Button } from '../button'
+import { Icon } from '../icon'
 import { Heading2, Paragraph2 } from '../typography'
 import { ModalSlots, modalVariants, ModalVariants } from './variants'
 
@@ -12,25 +16,34 @@ type OmittedType = ModalVariants & {
   modal: DialogPrimitive.DialogProps['modal']
   defaultOpen: DialogPrimitive.DialogProps['defaultOpen']
 }
+
 type Props = Omit<DialogPrimitive.DialogProps, keyof OmittedType> &
   ModalVariants
 
 export interface ModalProps extends Props {
-  isOpen: boolean
+  state: UseDisclosureReturn
   title: React.ReactNode
   description?: React.ReactNode
   classNames?: SlotsToClasses<ModalSlots>
+  closeButton?: React.ReactNode
 }
 
 export function Modal(props: ModalProps) {
   const {
     children,
     classNames,
-    isOpen,
+    state,
     title,
     description = '',
+    closeButton = (
+      <Button>
+        <Icon icon="close" />
+      </Button>
+    ),
     ...otherProps
   } = props
+
+  const { isOpen, close } = state
 
   const slots = modalVariants()
 
@@ -63,6 +76,10 @@ export function Modal(props: ModalProps) {
     [description],
   )
 
+  const { pressProps: closeButtonPressProps } = usePress({
+    onPress: close,
+  })
+
   return (
     <DialogPrimitive.Root {...otherProps} modal open={isOpen}>
       <DialogPrimitive.Portal>
@@ -75,6 +92,9 @@ export function Modal(props: ModalProps) {
             </DialogPrimitive.Description>
           </ContentBox>
           {children}
+          <DialogPrimitive.Close asChild {...closeButtonPressProps}>
+            {closeButton}
+          </DialogPrimitive.Close>
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>

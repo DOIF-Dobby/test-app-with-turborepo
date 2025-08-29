@@ -26,3 +26,5 @@ export function useDisclosure(props: UseDisclosureProps = {}) {
     close,
   }
 }
+
+export type UseDisclosureReturn = ReturnType<typeof useDisclosure>

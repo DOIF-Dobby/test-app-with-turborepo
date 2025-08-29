@@ -22,7 +22,7 @@ import { useRef, useState } from 'react'
 export default function Page() {
   const ref = useRef<HTMLButtonElement>(null)
   const [tab, setTab] = useState('1')
-  const { isOpen, open } = useDisclosure()
+  const modalState = useDisclosure()
 
   return (
     <div className="p-20">
@@ -40,18 +40,21 @@ export default function Page() {
       <Heading0>안녕하세요</Heading0>
 
       <Modal
+        state={modalState}
         title="Heading"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        isOpen={isOpen}
       >
-        <ContentBox>안녕하세요</ContentBox>
+        <ContentBox>
+          <div>안녕ㅏ세요</div>
+          <div>반갑습니다.</div>
+        </ContentBox>
       </Modal>
 
       <Button
         ref={ref}
         onPress={() => {
           console.log('테스트')
-          open()
+          modalState.open()
         }}
       >
         테스트
