@@ -1,8 +1,10 @@
 import { createTV } from 'tailwind-variants'
-import { classGroups } from '../tw-merge'
+import { theme } from '../tw-merge/tw-merge'
 
 export const tv = createTV({
   twMergeConfig: {
-    classGroups: classGroups,
+    extend: {
+      theme,
+    },
   },
 })

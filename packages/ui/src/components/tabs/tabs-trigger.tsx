@@ -2,7 +2,7 @@
 
 import { domMax, LazyMotion, m } from 'motion/react'
 import { Tabs as TabsPrimitive } from 'radix-ui'
-import { cn } from '../../utils/cn'
+import { twcn } from '../../utils/twcn'
 import { useTabsContext } from './tabs-context'
 import { tabsVariatns } from './variants'
 
@@ -17,18 +17,18 @@ export function TabsTrigger(props: TabsTriggerProps) {
   const slots = tabsVariatns()
 
   const triggerStyles = slots.tabTrigger({
-    className: cn(context.classNames?.tabTrigger, className),
+    className: twcn(context.classNames?.tabTrigger, className),
   })
 
   const cursorStyles = slots.cursor({
-    className: cn(context.classNames?.cursor, className),
+    className: twcn(context.classNames?.cursor, className),
     variant: context.variant,
     radius: context.radius,
   })
 
   return (
     <TabsPrimitive.TabsTrigger
-      className={cn(triggerStyles)}
+      className={twcn(triggerStyles)}
       value={value}
       {...otherProps}
     >

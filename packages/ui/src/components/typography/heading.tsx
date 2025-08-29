@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react'
-import { cn } from '../../utils/cn'
+import { twcn } from '../../utils/twcn'
 
 type Props = {}
 
@@ -16,7 +16,7 @@ export function Heading0(props: HeadingProps) {
       {...otherProps}
       role="heading"
       aria-level={0}
-      className={cn(
+      className={twcn(
         [
           'text-heading-0',
           'font-heading-0',
@@ -38,7 +38,7 @@ export function Heading1(props: HeadingProps) {
       {...otherProps}
       role="heading"
       aria-level={1}
-      className={cn(
+      className={twcn(
         [
           'text-heading-1',
           'font-heading-1',
@@ -60,7 +60,7 @@ export function Heading2(props: HeadingProps) {
       {...otherProps}
       role="heading"
       aria-level={2}
-      className={cn(
+      className={twcn(
         [
           'text-heading-2',
           'font-heading-2',
@@ -82,7 +82,7 @@ export function Heading3(props: HeadingProps) {
       {...otherProps}
       role="heading"
       aria-level={3}
-      className={cn(
+      className={twcn(
         [
           'text-heading-3',
           'font-heading-3',
@@ -104,7 +104,7 @@ export function Heading4(props: HeadingProps) {
       {...otherProps}
       role="heading"
       aria-level={4}
-      className={cn(
+      className={twcn(
         [
           'text-heading-4',
           'font-heading-4',
@@ -126,7 +126,7 @@ export function Heading5(props: HeadingProps) {
       {...otherProps}
       role="heading"
       aria-level={5}
-      className={cn(
+      className={twcn(
         [
           'text-heading-5',
           'font-heading-5',
@@ -148,7 +148,7 @@ export function Heading6(props: HeadingProps) {
       {...otherProps}
       role="heading"
       aria-level={6}
-      className={cn(
+      className={twcn(
         [
           'text-heading-6',
           'font-heading-6',

@@ -1,4 +1,4 @@
-import { cn } from '@repo/ui/utils/cn'
+import { twcn } from '@repo/ui/utils/twcn'
 
 interface ColorBoxProps {
   children: React.ReactNode
@@ -9,7 +9,7 @@ function ColorBox({ children, className }: ColorBoxProps) {
   return (
     <div>
       <div
-        className={cn(
+        className={twcn(
           'flex size-32 items-center justify-center rounded-lg p-6',
           className,
         )}

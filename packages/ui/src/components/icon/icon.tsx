@@ -1,4 +1,4 @@
-import { cn } from '../../utils/cn'
+import { twcn } from '../../utils/twcn'
 import { icons, IconType } from './icons'
 import { iconVariants, IconVariants } from './variants'
 
@@ -19,5 +19,5 @@ export function Icon(props: IconProps) {
     className,
   })
 
-  return <SVGIcon className={cn(styles)} {...otherProps} />
+  return <SVGIcon className={twcn(styles)} {...otherProps} />
 }

@@ -19,6 +19,7 @@ export const modalVariants = tv({
       'focus-visible:outline-8',
     ],
     modalOverlay: ['fixed', 'inset-0', 'bg-black/60'],
+    modalCloseButton: ['absolute', 'top-2', 'right-2'],
   },
   variants: {
     size: {

@@ -1,7 +1,7 @@
 'use client'
 
 import { Tabs as TabsPrimitive } from 'radix-ui'
-import { cn } from '../../utils/cn'
+import { twcn } from '../../utils/twcn'
 import { useTabsContext } from './tabs-context'
 import { tabsVariatns } from './variants'
 
@@ -16,11 +16,11 @@ export function TabsList(props: TabsListProps) {
   const slots = tabsVariatns()
 
   const styles = slots.tabList({
-    className: cn(context.classNames?.tabList, className),
+    className: twcn(context.classNames?.tabList, className),
     size: context.size,
     variant: context.variant,
     radius: context.radius,
   })
 
-  return <TabsPrimitive.TabsList className={cn(styles)} {...otherProps} />
+  return <TabsPrimitive.TabsList className={twcn(styles)} {...otherProps} />
 }

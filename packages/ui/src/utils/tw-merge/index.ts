@@ -1,1 +1,1 @@
-export { classGroups, twMerge } from './tw-merge'
+export { twMerge } from './tw-merge'

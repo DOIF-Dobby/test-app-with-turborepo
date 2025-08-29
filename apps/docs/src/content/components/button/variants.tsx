@@ -1,33 +1,27 @@
 import { Button } from '@repo/ui/components/button'
 import { Paragraph1 } from '@repo/ui/components/typography'
 
-export default function Disabled() {
+export default function Variants() {
   return (
     <div className="flex flex-col gap-4">
       <div>
         <Paragraph1>cta1</Paragraph1>
         <div className="flex items-center gap-2">
-          <Button isDisabled variant="solid">
-            Solid
-          </Button>
-          <Button isDisabled variant="bordered">
-            Bordered
-          </Button>
-          <Button isDisabled variant="light">
-            Light
-          </Button>
+          <Button variant="solid">Solid</Button>
+          <Button variant="bordered">Bordered</Button>
+          <Button variant="light">Light</Button>
         </div>
       </div>
       <div>
         <Paragraph1>cta2</Paragraph1>
         <div className="flex items-center gap-2">
-          <Button color="cta2" isDisabled variant="solid">
+          <Button color="cta2" variant="solid">
             Solid
           </Button>
-          <Button color="cta2" isDisabled variant="bordered">
+          <Button color="cta2" variant="bordered">
             Bordered
           </Button>
-          <Button color="cta2" isDisabled variant="light">
+          <Button color="cta2" variant="light">
             Light
           </Button>
         </div>
@@ -35,13 +29,13 @@ export default function Disabled() {
       <div>
         <Paragraph1>destructive</Paragraph1>
         <div className="flex items-center gap-2">
-          <Button color="destructive" isDisabled variant="solid">
+          <Button color="destructive" variant="solid">
             Solid
           </Button>
-          <Button color="destructive" isDisabled variant="bordered">
+          <Button color="destructive" variant="bordered">
             Bordered
           </Button>
-          <Button color="destructive" isDisabled variant="light">
+          <Button color="destructive" variant="light">
             Light
           </Button>
         </div>

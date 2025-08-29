@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react'
+import { twcn } from '../../utils/twcn'
 import { contentBoxVariants, ContentBoxVariants } from './variants'
 
 type Props = Omit<HTMLAttributes<HTMLDivElement>, keyof ContentBoxVariants> &
@@ -16,7 +17,7 @@ export function ContentBox(props: ContentBoxProps) {
   })
 
   return (
-    <div {...otherProps} className={styles}>
+    <div {...otherProps} className={twcn(styles)}>
       {children}
     </div>
   )

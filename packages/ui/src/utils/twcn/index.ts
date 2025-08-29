@@ -1,0 +1,1 @@
+export { twcn } from './twcn'

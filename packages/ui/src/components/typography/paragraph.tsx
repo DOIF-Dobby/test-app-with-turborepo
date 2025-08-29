@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react'
-import { cn } from '../../utils/cn'
+import { twcn } from '../../utils/twcn'
 
 type Props = {}
 
@@ -15,7 +15,7 @@ export function Paragraph1(props: ParagraphProps) {
     <p
       {...otherProps}
       role="paragraph"
-      className={cn(
+      className={twcn(
         [
           'text-paragraph-1',
           'font-paragraph-1',
@@ -36,7 +36,7 @@ export function Paragraph2(props: ParagraphProps) {
     <p
       {...otherProps}
       role="paragraph"
-      className={cn(
+      className={twcn(
         [
           'text-paragraph-2',
           'font-paragraph-2',
@@ -57,7 +57,7 @@ export function Paragraph3(props: ParagraphProps) {
     <p
       {...otherProps}
       role="paragraph"
-      className={cn(
+      className={twcn(
         [
           'text-paragraph-3',
           'font-paragraph-3',
@@ -78,7 +78,7 @@ export function Paragraph4(props: ParagraphProps) {
     <p
       {...otherProps}
       role="paragraph"
-      className={cn(
+      className={twcn(
         [
           'text-paragraph-4',
           'font-paragraph-4',
@@ -99,7 +99,7 @@ export function Paragraph5(props: ParagraphProps) {
     <p
       {...otherProps}
       role="paragraph"
-      className={cn(
+      className={twcn(
         [
           'text-paragraph-5',
           'font-paragraph-5',
@@ -120,7 +120,7 @@ export function Paragraph6(props: ParagraphProps) {
     <p
       {...otherProps}
       role="paragraph"
-      className={cn(
+      className={twcn(
         [
           'text-paragraph-6',
           'font-paragraph-6',

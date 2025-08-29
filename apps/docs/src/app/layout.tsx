@@ -1,4 +1,4 @@
-import { cn } from '@repo/ui/utils/cn'
+import { twcn } from '@repo/ui/utils/twcn'
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import './app.css'
@@ -34,7 +34,7 @@ export default function RootLayout({
       data-theme="switchui-light"
       className={`${pretendard.variable}`}
     >
-      <body className={cn(pretendard.className)}>
+      <body className={twcn(pretendard.className)}>
         <div className="text-base-content bg-background mx-auto max-w-[100rem]">
           {children}
         </div>

@@ -3,11 +3,10 @@ import { UseDisclosureReturn } from '@repo/hooks/use-disclosure'
 import { Dialog as DialogPrimitive } from 'radix-ui'
 import { useMemo } from 'react'
 import { SlotsToClasses } from '../../types/util'
-import { cn } from '../../utils/cn'
+import { twcn } from '../../utils/twcn'
 import { ContentBox } from '../box'
-import { Button } from '../button'
-import { Icon } from '../icon'
 import { Heading2, Paragraph2 } from '../typography'
+import { DefaultModalCloseButton } from './default-modal-close-button'
 import { ModalSlots, modalVariants, ModalVariants } from './variants'
 
 type OmittedType = ModalVariants & {
@@ -35,11 +34,8 @@ export function Modal(props: ModalProps) {
     state,
     title,
     description = '',
-    closeButton = (
-      <Button>
-        <Icon icon="close" />
-      </Button>
-    ),
+    closeButton = <DefaultModalCloseButton />,
+    size,
     ...otherProps
   } = props
 
@@ -48,10 +44,14 @@ export function Modal(props: ModalProps) {
   const slots = modalVariants()
 
   const contentStyles = slots.modalContent({
-    className: cn(classNames?.modalContent),
+    className: twcn(classNames?.modalContent),
+    size,
   })
   const overlayStyles = slots.modalOverlay({
-    className: cn(classNames?.modalOverlay),
+    className: twcn(classNames?.modalOverlay),
+  })
+  const closeButtonStyles = slots.modalCloseButton({
+    className: twcn(classNames?.modalCloseButton),
   })
 
   // 모달 제목 컴포넌트
@@ -83,8 +83,8 @@ export function Modal(props: ModalProps) {
   return (
     <DialogPrimitive.Root {...otherProps} modal open={isOpen}>
       <DialogPrimitive.Portal>
-        <DialogPrimitive.Overlay className={overlayStyles} />
-        <DialogPrimitive.Content className={contentStyles}>
+        <DialogPrimitive.Overlay className={twcn(overlayStyles)} />
+        <DialogPrimitive.Content className={twcn(contentStyles)}>
           <ContentBox>
             <DialogPrimitive.Title asChild>{modalTitle}</DialogPrimitive.Title>
             <DialogPrimitive.Description asChild>
@@ -92,7 +92,11 @@ export function Modal(props: ModalProps) {
             </DialogPrimitive.Description>
           </ContentBox>
           {children}
-          <DialogPrimitive.Close asChild {...closeButtonPressProps}>
+          <DialogPrimitive.Close
+            asChild
+            className={twcn(closeButtonStyles)}
+            {...closeButtonPressProps}
+          >
             {closeButton}
           </DialogPrimitive.Close>
         </DialogPrimitive.Content>

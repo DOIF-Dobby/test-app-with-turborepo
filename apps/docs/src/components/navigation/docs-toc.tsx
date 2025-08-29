@@ -1,4 +1,4 @@
-import { cn } from '@repo/ui/utils/cn'
+import { twcn } from '@repo/ui/utils/twcn'
 
 const paddingMap: Record<number, string> = {
   2: 'pl-0',
@@ -25,7 +25,7 @@ export default function DocsToc({ headings }: DocsTocProps) {
           <div key={heading.id}>
             <a
               href={`#${heading.id}`}
-              className={cn([
+              className={twcn([
                 `${paddingMap[heading.depth] ?? ''}`,
                 'text-base-600 hover:text-base-700',
               ])}

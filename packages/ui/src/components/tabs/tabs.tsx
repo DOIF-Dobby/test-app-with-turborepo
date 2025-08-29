@@ -3,7 +3,7 @@
 import { Tabs as TabsPrimitive } from 'radix-ui'
 import { useId } from 'react'
 import { SlotsToClasses } from '../../types/util'
-import { cn } from '../../utils/cn'
+import { twcn } from '../../utils/twcn'
 import { TabsContext } from './tabs-context'
 import { TabsSlots, TabsVariants, tabsVariatns } from './variants'
 
@@ -35,11 +35,11 @@ export function Tabs(props: TabsProps) {
   const slots = tabsVariatns()
 
   const styles = slots.tabsRoot({
-    className: cn(classNames?.tabsRoot, className),
+    className: twcn(classNames?.tabsRoot, className),
   })
 
   return (
-    <TabsPrimitive.Root className={cn(styles)} value={value} {...otherProps}>
+    <TabsPrimitive.Root className={twcn(styles)} value={value} {...otherProps}>
       <TabsContext
         value={{
           tabsId,

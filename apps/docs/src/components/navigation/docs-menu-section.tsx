@@ -7,7 +7,7 @@ import {
 } from '@repo/ui/components/collapsible'
 import { Icon } from '@repo/ui/components/icon'
 import { Heading4 } from '@repo/ui/components/typography'
-import { cn } from '@repo/ui/utils/cn'
+import { twcn } from '@repo/ui/utils/twcn'
 import { capitalizeFirstLetter } from '@repo/utils/string'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -29,7 +29,7 @@ export function DocsMenuSection({ title, contentPaths }: DocsMenuSectionProps) {
         <Icon
           icon="chevronRight"
           size="sm"
-          className={cn(open && 'rotate-90')}
+          className={twcn(open && 'rotate-90')}
         />
       </CollapsibleTrigger>
       <CollapsibleContent>
@@ -41,7 +41,7 @@ export function DocsMenuSection({ title, contentPaths }: DocsMenuSectionProps) {
             return (
               <Link href={href} key={href}>
                 <li
-                  className={cn(
+                  className={twcn(
                     'text-base-600 px-sone-xs py-sone-2xs rounded-input-sm font-medium',
                     pathname === href
                       ? 'bg-cta1 text-base-100 font-semibold'

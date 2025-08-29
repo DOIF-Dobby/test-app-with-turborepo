@@ -7,7 +7,7 @@ import { Slot } from 'radix-ui'
 import { useCallback, useRef } from 'react'
 import { useScaleAnimation } from '../../animation/use-scale-animation'
 import { AsChild } from '../../types/util'
-import { cn } from '../../utils/cn'
+import { twcn } from '../../utils/twcn'
 import { Ripple } from '../ripple'
 import { useRipple } from '../ripple/use-ripple'
 import { ButtonVariants, buttonVariatns } from './variants'
@@ -73,7 +73,7 @@ export function Button(props: ButtonProps) {
     size,
     isDisabled,
     fullWidth,
-    className,
+    className: twcn(className),
   })
 
   const Comp = asChild ? Slot.Root : 'button'
@@ -84,7 +84,7 @@ export function Button(props: ButtonProps) {
       data-slot="button"
       ref={mergeRefs([innerRef, scope, ref])}
       disabled={isDisabled}
-      className={cn(styles)}
+      className={styles}
       data-pressed={isPressed}
       {...mergeProps(pressProps, otherProps)}
     >
