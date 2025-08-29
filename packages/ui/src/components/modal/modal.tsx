@@ -116,15 +116,6 @@ export function Modal(props: ModalProps) {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 10, opacity: 0 }}
                 >
-                  <ContentBox>
-                    <DialogPrimitive.Title asChild>
-                      {modalTitle}
-                    </DialogPrimitive.Title>
-                    <DialogPrimitive.Description asChild>
-                      {modalDescription}
-                    </DialogPrimitive.Description>
-                  </ContentBox>
-                  {children}
                   {!hideCloseButton && (
                     <DialogPrimitive.Close
                       asChild
@@ -134,6 +125,15 @@ export function Modal(props: ModalProps) {
                       {closeButton}
                     </DialogPrimitive.Close>
                   )}
+                  <ContentBox>
+                    <DialogPrimitive.Title asChild>
+                      {modalTitle}
+                    </DialogPrimitive.Title>
+                    <DialogPrimitive.Description asChild>
+                      {modalDescription}
+                    </DialogPrimitive.Description>
+                  </ContentBox>
+                  {children}
                 </motion.div>
               ) : null}
             </DialogPrimitive.Content>
