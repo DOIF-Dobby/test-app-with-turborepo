@@ -2,6 +2,7 @@ import { twcn } from '@repo/ui/utils/twcn'
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import './app.css'
+import { AppProviders } from './providers'
 
 const pretendard = localFont({
   src: '../../../../assets/fonts/PretendardVariable.woff2',
@@ -35,9 +36,11 @@ export default function RootLayout({
       className={`${pretendard.variable}`}
     >
       <body className={twcn(pretendard.className)}>
-        <div className="text-base-content bg-background mx-auto max-w-[100rem]">
-          {children}
-        </div>
+        <AppProviders>
+          <div className="text-base-content bg-background mx-auto max-w-[100rem]">
+            {children}
+          </div>
+        </AppProviders>
       </body>
     </html>
   )

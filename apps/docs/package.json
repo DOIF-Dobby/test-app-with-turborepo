@@ -14,14 +14,15 @@
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.3.1",
-    "@repo/ui": "workspace:*",
     "@repo/hooks": "workspace:*",
+    "@repo/ui": "workspace:*",
     "@repo/utils": "workspace:*",
     "@types/mdx": "^2.0.13",
     "@types/react-syntax-highlighter": "^15.5.13",
     "eslint-config-next": "^15.5.0",
     "estree-util-value-to-estree": "^3.4.0",
     "mdast-util-to-string": "^4.0.0",
+    "motion": "^12.11.4",
     "next": "15.5.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -35,7 +36,7 @@
     "shiki": "^3.3.0",
     "unist-util-mdx-define": "^1.1.2",
     "unist-util-visit": "^5.0.0",
-    "motion": "^12.11.4"
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@repo/config-eslint": "workspace:*",

@@ -4,6 +4,7 @@
   "private": true,
   "exports": {
     "./components/*": "./src/components/*/index.tsx",
+    "./providers": "./src/providers/index.tsx",
     "./utils/*": "./src/utils/*/index.ts",
     "./styles.css": "./src/styles/globals.css"
   },

@@ -39,11 +39,6 @@ export function TabsTrigger(props: TabsTriggerProps) {
             className={cursorStyles}
             layoutDependency={false}
             layoutId={`cursor-${context.tabsId}`}
-            transition={{
-              type: 'spring',
-              bounce: 0.15,
-              duration: 0.5,
-            }}
           />
         </LazyMotion>
       ) : null}

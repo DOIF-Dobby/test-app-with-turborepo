@@ -5,7 +5,8 @@ import { chain, mergeProps } from '@react-aria/utils'
 import { mergeRefs } from '@repo/utils/merge-refs'
 import { Slot } from 'radix-ui'
 import { useCallback, useRef } from 'react'
-import { useScaleAnimation } from '../../animation/use-scale-animation'
+import { useScaleAnimation } from '../../animations/use-scale-animation'
+import { useUIContext } from '../../providers'
 import { AsChild } from '../../types/util'
 import { twcn } from '../../utils/twcn'
 import { Ripple } from '../ripple'
@@ -22,6 +23,8 @@ type Props = Omit<
 export interface ButtonProps extends Props {
   fullWidth?: boolean
   onPress?: (event: PressEvent) => void
+  disableRipple?: boolean
+  disableAnimation?: boolean
 }
 
 export function Button(props: ButtonProps) {
@@ -36,6 +39,8 @@ export function Button(props: ButtonProps) {
     isDisabled,
     fullWidth,
     role = 'button',
+    disableRipple = false,
+    disableAnimation = false,
     onPress,
     ...otherProps
   } = props
@@ -63,8 +68,13 @@ export function Button(props: ButtonProps) {
     ref: innerRef,
   })
 
+  const { disableAnimation: globalDisableAnimation } = useUIContext()
+  const disableButtonAnimation = disableAnimation || globalDisableAnimation
+
   const { scope } = useScaleAnimation({
     isPressed,
+    duration: disableButtonAnimation ? 0 : 0.2,
+    scale: disableButtonAnimation ? 1 : 0.97,
   })
 
   const styles = buttonVariatns({
@@ -89,7 +99,7 @@ export function Button(props: ButtonProps) {
       {...mergeProps(pressProps, otherProps)}
     >
       {children}
-      <Ripple ripples={ripples} onClear={onClear} />
+      {!disableRipple && <Ripple ripples={ripples} onClear={onClear} />}
     </Comp>
   )
 }
